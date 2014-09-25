@@ -1,0 +1,189 @@
+header{
+    #top_menu{
+        position: fixed;
+        top: 0;
+        left: -25px;
+        right: -25px;
+        padding: 0 25px;
+        background: $gray;
+        border-bottom: 2px solid $green_dark;
+        z-index: 49;
+        cursor: pointer;
+        @include transition();
+        @include translate(-20px,0,0);
+        @include box-shadow(0px 2px 20px 0px rgba(50, 50, 50, 0.5));
+        #menu_contents{
+            box-sizing: border-box;
+            #menu_trigger{
+                color: white;
+                background-size: 140px 84px;
+                background: url('../img/sushi_menu_bg.png') no-repeat right center;
+                position: relative;
+                overflow: hidden;
+                h1{
+                    margin: 12px 0;
+                    padding: 0 15px;
+                    display: block;
+                    float: left;
+                }
+                #menu_icon{
+                    margin: 14px 0;
+                    display: block;
+                    float: left;
+                    width: 24px;
+                    height: 24px;
+                    span{
+                        display: block;
+                        height: 2px;
+                        text-indent: -9999px;
+                        background: white;
+                        background: rgba(255,255,255,0.5);
+                        margin: 5px 0;
+                    }
+                }
+            }
+        }
+    }
+    #lateral_menu{
+        position: fixed;
+        z-index: 48;
+        top: 54px;
+        left: 0;
+        bottom: 0;
+        overflow-y: scroll;
+        background: white;
+        border-right: 1px solid $green_dark;
+        width: 90%;
+        max-width: 380px;
+        @include transition();
+        @include translate(-100%,0);
+        @include box-shadow(0px 2px 20px 0px rgba(50, 50, 50, 0.5));
+        ul{
+            margin: 0;
+            padding: 5px 0;
+            list-style: none outside none;
+            li{
+                background-size: 55px 48px;
+                background: url('../img/icon_0.png') no-repeat 10px 10px;
+                padding: 24px 10px 24px 80px;
+                height: 70px;
+                border-bottom: 1px solid $gray_light;
+                box-sizing: border-box;
+                a{
+                    display: block;
+                    font-size: 22px;
+                    font-weight: 300;
+                    color: $gray;
+                    margin: 0;
+                    padding-right: 10px;
+                    line-height: 100%;
+                    text-transform: capitalize;
+                }
+            }
+            li:nth-child(2){
+                background-image: url('../img/icon_1.png');
+            }
+            li:nth-child(3){
+                background-image: url('../img/icon_2.png');
+            }
+            li:nth-child(4){
+                background-image: url('../img/icon_3.png');
+            }
+            li:nth-child(5){
+                background-image: url('../img/icon_4.png');
+            }
+        }
+    }
+    &.active{
+        #top_menu{
+            @include translate(25px,0);
+        }
+        #lateral_menu{
+            @include translate(0,0);
+        }
+    }
+}
+main{
+    font-family: $font_regular;
+    overflow-y: visible;
+    height: 100%;
+    margin-top: 75px;
+    position: relative;
+    .page{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        transition-property: -webkit-transform;
+        transition-property: transform;
+        transition-duration: 0.5s;
+        transition-timing-function: ease;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        &.is-visible{
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    .box{
+        margin: 2.5%;
+        width: 95%;
+        background: white;
+        box-sizing: border-box;
+        @include border-radius(2px);
+        @include box-shadow(0 2px 6px rgba(0,0,0,0.1));
+        section{
+            @include clear();
+            a{
+                &.button{
+                    border: 1px solid $gray;
+                    display: block;
+                    width: 100%;
+                    background: $gray_light;
+                    color: $gray;
+                    padding: 10px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    font-size: 21px;
+                    line-height: 120%;
+                    text-transform: capitalize;
+                }
+                &.section{
+                    padding: 2.5%;
+                    display: block;
+                    font-size: 48px;
+                    font-weight: 300;
+                    color: $gray;
+                    margin: 0;
+                    padding-right: 10px;
+                    line-height: 100%;
+                    font-family: $font_thin;
+                    @include clear();
+                    img,span{
+                        display: block;
+                        float: left;
+                    }
+                    span{
+                        text-transform: capitalize;
+                        padding: 0 2.5%;
+                    }
+                }
+            }
+            .content{
+                padding: 2.5%;
+                box-sizing: border-box;
+                h1{
+                    font-size: 24px;
+                    font-family: $font_thin;
+                    text-align: center;
+                    text-transform: capitalize;
+                }
+                textarea{
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+}

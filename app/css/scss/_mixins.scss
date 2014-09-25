@@ -1,0 +1,52 @@
+@mixin translate(
+    $translate-x: 0, 
+    $translate-y: 0,
+    $translate-z: 0) {
+    -webkit-transform: translate3d($translate-x, $translate-y,$translate-z);
+    -ms-transform: translate3d($translate-x, $translate-y,$translate-z);
+    transform: translate3d($translate-x, $translate-y,$translate-z);
+}
+@mixin box-shadow($box-shadow: none){
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow:    $box-shadow;
+    box-shadow:         $box-shadow;
+}
+
+@mixin transition($duration: 0.2s){
+    -webkit-transition:all $duration linear;
+    -moz-transition:all $duration linear;
+    -o-transition:all $duration linear;
+    -ms-transition:all $duration linear;
+    transition:all $duration linear;
+}
+@mixin border-radius($border-radius: 0) {
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+}
+@mixin clear() {
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+@mixin animation($duration: 1s,$iteration: 1, $name: none){
+    -webkit-animation-duration: $duration;
+            animation-duration: $duration;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: $iteration;
+            animation-iteration-count: $iteration;
+    -webkit-animation-name: $name;
+            animation-name: $name;
+}
+@mixin user-select($property : auto){
+    /* auto | none | text */
+    -webkit-touch-callout: $property;
+    -webkit-user-select: $property;
+    -khtml-user-select: $property;
+    -moz-user-select: $property;
+    -ms-user-select: $property;
+    user-select: $property;
+}

@@ -1,0 +1,21 @@
+@media (max-width: 768px) {    
+    textarea{
+        padding: 1%;
+    }
+    main{
+        .box{
+            section{
+                @include clear();
+                a{
+                    &.section{
+                        font-size: 36px;
+                        line-height: 48px;
+                        span{
+                            padding: 0 5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
