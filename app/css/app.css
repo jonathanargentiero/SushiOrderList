@@ -596,12 +596,15 @@ main {
     right: 0;
     bottom: 0;
     left: 0;
+    width: 100%;
     text-align: center;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
     -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0); }
     main .page.is-visible {
       -webkit-transform: translate3d(0, 0, 0);
