@@ -105,6 +105,7 @@ header{
 }
 main{
     font-family: $font_regular;
+    overflow-x: hidden;
     overflow-y: visible;
     height: 100%;
     width: 100%;

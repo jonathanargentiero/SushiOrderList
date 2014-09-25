@@ -406,6 +406,7 @@ th {
 /* COLORS */
 html, body {
   width: 100%;
+  overflow-x: hidden;
   height: 100%;
   margin: 0; }
 
@@ -583,6 +584,7 @@ header.active #lateral_menu {
 
 main {
   font-family: "Roboto", arial, sans-serif;
+  overflow-x: hidden;
   overflow-y: visible;
   height: 100%;
   width: 100%;
